@@ -1,0 +1,8 @@
+node_modules/
+
+# playwtight
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+!tests/*-snapshots/*.png
