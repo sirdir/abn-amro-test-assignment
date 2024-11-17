@@ -15,7 +15,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/playwright-report/*', '**/test-results/*', '**/src/*'],
+    ignores: ['**/playwright-report/*', '**/test-results/*', 'src/server.js', 'src/js/**'],
   },
   ...compat.extends(
     'eslint:recommended',
