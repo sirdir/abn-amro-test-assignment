@@ -24,7 +24,8 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    trace: 'on-first-retry',
+    baseURL: 'http://localhost:8080',
+    screenshot: 'only-on-failure',
   },
 
   projects: [
@@ -40,9 +41,9 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
+  webServer: {
+    command: 'npm run server:start',
+    url: 'http://localhost:8080',
+    reuseExistingServer: !process.env.CI,
+  },
 });
