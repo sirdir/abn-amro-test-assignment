@@ -14,8 +14,6 @@ TODO
 
 ## Installation
 
-TODO provide bash script for short-cut if needed
-
 1. Clone the repository:
    ```bash
    git clone git@github.com:sirdir/abn-amro-test-assignment.git
@@ -28,9 +26,9 @@ TODO provide bash script for short-cut if needed
    ```bash
    npm install
    ```
-4. Install the required dependencies:
+4. Install the required dependencies (will ask for `sudo`):
    ```bash
-   npx playwright install --with-deps
+   npx playwright install --with-deps chromium
    ```
 
 ## Testing. Test Cases and Test Coverage
