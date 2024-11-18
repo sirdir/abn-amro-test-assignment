@@ -83,7 +83,7 @@ npm run test:ui
 
 ## Reporting
 
-If there are any test failures after running the tests, Playwright will automatically show the test report.
+After each test run test report will be automatically shown. Failed tests if any should contain screenshots.
 
 You can also manually run the report with the following command:
 
@@ -91,11 +91,15 @@ You can also manually run the report with the following command:
 npm run report
 ```
 
-Failed tests should contain screenshots.
+For the CI report look at [GitHub Pages](https://sirdir.github.io/abn-amro-test-assignment/).
 
 ## CI
 
-TODO
+GitHub Actions have been used as CI.
+
+All CI jobs by -> [link](https://github.com/sirdir/abn-amro-test-assignment/actions/workflows/playwright.yml).
+
+Latest CI report -> [GitHub Pages](https://sirdir.github.io/abn-amro-test-assignment/).
 
 ## Static Analysis and Code Style
 
