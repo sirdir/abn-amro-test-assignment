@@ -6,7 +6,8 @@
     "prettify": "npm run prettier-fix && npm run lint && git status -s",
     "test": "playwright test",
     "test:ui": "playwright test --headed",
-    "server:start": "node src/server.js"
+    "server:start": "node src/server.js",
+    "report": "playwright show-report"
   },
   "pre-commit": [
     "prettify"

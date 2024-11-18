@@ -2,55 +2,103 @@
 
 ## Introduction
 
-This repository contains the test assignment for ABN AMRO.
+Welcome to the ABN AMRO test assignment repository.
 
-TODO
+The Playwright framework has been selected to provide test coverage for this application. More information about Playwright can be found [here](https://playwright.dev/docs/intro).
 
 ## Requirements
 
-- NodeJS 20+
+- `NodeJS 20+` - can be downloaded from [here](https://nodejs.org/en/download/package-manager)
 
-TODO
-
-## Installation
+## Setup Project
 
 1. Clone the repository:
-   ```bash
+   ```sh
    git clone git@github.com:sirdir/abn-amro-test-assignment.git
    ```
 2. Navigate to the project directory:
-   ```bash
+   ```sh
    cd abn-amro-test-assignment
    ```
-3. Install the required dependencies:
-   ```bash
+3. Install project dependencies:
+   ```sh
    npm install
    ```
-4. Install the required dependencies (will ask for `sudo`):
-   ```bash
-   npx playwright install --with-deps chromium
+4. Install playwright required dependencies (will ask for `sudo`):
+   ```sh
+   npx playwright install --with-deps chromium firefox
    ```
 
-## Testing. Test Cases and Test Coverage
+## Testing: Test Cases and Test Coverage
 
-TODO
+After conducting exploratory testing of the application, it has been concluded that it is still "In development." Therefore, test coverage is provided for the final product and the expected user experience, rather than just the current state. Many assumptions have been made due to the lack of a specification to reference.
 
-## Usage && Reporting
+### List of Assumptions:
 
-### Usage
+- `admin@admin.com` is indeed an administrator user with specific permissions, while the other two users are common ones.
+- Some functionality is still being developed. Tests for functionality that is not yet have been implemented have marked with the annotation `test.fixme()`. More information about this annotation can be found [here](https://playwright.dev/docs/api/class-test#test-fixme).
+- Some functionality has issues that should be fixed in upcoming versions. Tests for such functionality have been marked with the annotation `test.fail()`. More information about this annotation can be found [here](https://playwright.dev/docs/api/class-test#test-fail).
 
-TODO
+### Test Coverage
 
-### Reporting
+Tests have been parameterized whenever possible.
 
-TODO
+Tests have been configured to run for Chrome and Firefox. They can be easily extended to other browsers.
 
-```bash
-npx playwright show-report`
+Test cases have been labeled here in the README, but not in the code, with the following labels: `positive`, `negative`, `fail`, `fixme`, `parameterized`.
+
+#### Login Test Suite:
+
+- Successful authorization by clicking the login button **(positive/parameterized)**
+- Successful authorization by pressing Enter when credentials are filled **(positive/fail)**
+- Authorization with wrong credentials **(negative/fixme/parameterized)**
+
+#### Navigation Test Suite:
+
+- Navigate from Home page to Products page **(positive/fixme)**
+- Navigate from Home page to Contact page **(positive/fixme)**
+
+#### Logout:
+
+- User can log out from the app **(positive/fail)**
+
+#### Permission Test Suite:
+
+- Admin should see the admin panel **(positive/fixme)**
+- Average user should not see the admin panel **(positive/fixme/parameterized)**
+
+## Usage
+
+To run all the tests in headless mode, use the following command in the terminal:
+
+```sh
+npm run test
 ```
 
+If you want to see the browser(s) while tests are executed, run this command instead:
+
+```sh
+npm run test:ui
+```
+
+## Reporting
+
+If there are any test failures after running the tests, Playwright will automatically show the test report.
+
+You can also manually run the report with the following command:
+
+```sh
+npm run report
+```
+
+Failed tests should contain screenshots.
+
+## CI
+
 TODO
 
-## P.S.
+## Static Analysis and Code Style
 
-TODO
+To maintain a consistent code style and prevent potential issues, Prettier and ESLint have been utilized as tools. Before each commit, a `pre-commit` hook is triggered to run Prettier and ESLint.
+
+Some changes have been made to the application source code due to potential issues identified by ESLint.
